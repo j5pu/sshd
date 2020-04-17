@@ -1,0 +1,22 @@
+---
+# defaults file for sshd
+sshd_config:
+#  Port: "{{ ssh_port }}"
+  AcceptEnv: 'LANG LC_*'
+  AddressFamily: 'inet'
+  AllowTcpForwarding: 'yes'
+#  AllowUsers: "{{ usuario }}"
+  Banner: 'none'
+  ChallengeResponseAuthentication: 'no'
+  GatewayPorts: 'yes'
+  MaxAuthTries: '3'
+  PasswordAuthentication: 'no'
+  PermitRootLogin: 'no'
+  PermitTunnel: 'no'
+  PrintLastLog: 'no'
+  PrintMotd: 'no'
+  PubkeyAuthentication: 'yes'
+  Subsystem: 'sftp internal-sftp'
+  UsePAM: 'yes'
+  X11Forwarding: 'yes'
+  X11UseLocalhost: 'yes'

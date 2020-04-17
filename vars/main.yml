@@ -1,0 +1,5 @@
+---
+# vars file for sshd
+sshd_dir: '/etc/ssh'
+sshd_file: sshd_config
+sshd_path: "{{ sshd_dir }}/{{ sshd_file }}"
