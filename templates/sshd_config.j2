@@ -1,4 +1,3 @@
-# {{ ansible_managed }}
 {% for item in sshd_config|dict2items %}
 {{item.key}} {{item.value}}
 {% endfor %}

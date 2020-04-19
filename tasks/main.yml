@@ -9,9 +9,15 @@
         mode: 0644
       register: config_status
 
-    - name: reload sshd
+    - name: reload sshd Ubuntu
       service:
         name: sshd
         state: reloaded
-      when: config_status.changed and ansible_distribution != 'MacOSX'
+      when: config_status.changed and ansible_distribution == 'Ubuntu'
+
+    - name: reload sshd RedHat
+      systemd:
+        name: sshd.service
+        state: reloaded
+      when: config_status.changed and ansible_os_family == 'RedHat'
   when: inventory_hostname not in groups.NFERX
